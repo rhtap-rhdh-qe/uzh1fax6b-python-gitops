@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: uzh1fax6b-python-gitops
+  description: This is GitOps manifest for uzh1fax6b-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=uzh1fax6b-python
+    backstage.io/kubernetes-id: uzh1fax6b-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: uzh1fax6b-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:uzh1fax6b-python
